@@ -226,7 +226,7 @@ def user_stats(df):
         more_data = input('Would you like to see more data?: Enter yes or no.').lower()
         if more_data != 'yes':
             break
-
+    pd.set_option(‘display.max_columns',200)
 
 def main():
     while True:
