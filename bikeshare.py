@@ -8,7 +8,7 @@
 # https://knowledge.udacity.com/questions/181095
 # https://knowledge.udacity.com/questions/26261
 
-
+#importing the module
 import time
 import pandas as pd
 import numpy as np
@@ -30,7 +30,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
- 
+
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     city_name = ''
@@ -52,7 +52,7 @@ def get_filters():
             print("We are able to analyze that date range.")
         else:
             print("I'm sorry, you have selected an invalid date range.")
-            
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day_name = ''
     while day_name.lower() not in DAY_DATA:
@@ -62,10 +62,10 @@ def get_filters():
             print("We are able to analyze that date range.")
         else:
             print("I'm sorry, you have selected an invalid date range.")
-    
+
     print('-'*40)
     return city, month, day
-   
+
 
 
 def load_data(city, month, day):
@@ -82,15 +82,15 @@ def load_data(city, month, day):
 
     # Load data file into Pandas Data Frame
     df = pd.read_csv(city)
-    
+
     # Column Start Time converted to datetime from string
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     # Create new columns by extracting month, day, and hour
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
-    
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
@@ -118,19 +118,19 @@ def time_stats(df):
     df['month'] = df['Start Time'].dt.month
     popular_month = df['month'].mode()[0]
     print("The most popular month from the given inputs is: ", popular_month)
-    
+
     # TO DO: display the most common day of week
     df['day'] = df['Start Time'].dt.weekday_name
     popular_day = df['day_of_week'].mode()[0]
     print("The most popular day from the given inputs is: ", popular_day)
-    
+
     # TO DO: display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print("The most popular hour from the given inputs is: ", popular_hour)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
-    
+
     print('-'*40)
 
 
@@ -188,7 +188,7 @@ def user_stats(df):
 
     user_types = df['User Type'].value_counts()
     print(user_types)
-   
+
 
     # TO DO: Display counts of gender
     if 'Gender' in df.columns:
@@ -210,7 +210,7 @@ def user_stats(df):
 
     else:
         print("\nBirth Year information cannot be found for Washington\n")
-        
+
     print('\nThis took %s seconds.' % (time.time() - start_time))
     print('-'*40)
 
@@ -225,7 +225,7 @@ def user_stats(df):
         more_data = input('Would you like to see more data?: Enter yes or no.').lower()
         if more_data != 'yes':
             break
-        
+
 
 def main():
     while True:
@@ -238,7 +238,7 @@ def main():
         user_stats(df)
 
 
-        
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
