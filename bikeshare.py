@@ -12,6 +12,7 @@
 import time
 import pandas as pd
 import numpy as np
+import tabulate
 
 #creating the dataframe
 CITY_DATA = { 'chicago': 'chicago.csv',
@@ -221,12 +222,12 @@ def user_stats(df):
     if view_data == 'yes':
         start_loc = 0
     while True:
-        print(df.iloc[start_loc:start_loc+5])
+        print(tabulate(df.iloc[start_loc:start_loc+5]))
         start_loc += 5
         more_data = input('Would you like to see more data?: Enter yes or no.').lower()
         if more_data != 'yes':
             break
-
+    pd.set_option(‘display.max_columns',200)
 
 def main():
     while True:
