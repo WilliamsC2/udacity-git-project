@@ -15,3 +15,11 @@ new_york_city.read_csv
 washington.read_csv
 
 ### Credits
+# https://github.com/beingjainparas/Udacity-Explore_US_Bikeshare_Data/blob/master/bikeshare_2.py
+# https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
+# https://stackoverflow.com/questions/12719586/how-to-let-python-recognize-both-lower-and-uppercase-input
+# https://knowledge.udacity.com/questions/263877
+# https://knowledge.udacity.com/questions/780589
+# https://knowledge.udacity.com/questions/86491
+# https://knowledge.udacity.com/questions/181095
+# https://knowledge.udacity.com/questions/26261
