@@ -5,10 +5,13 @@ August 21, 2022
 
 ### Project Title
 Udacity BikeShare Project
-### Description
 
+### Description
+The Bikeshare Python project is utilized to compute descriptive statistics for bike share systems in Chicago, New York City, and Washington.
 
 ### Files used
-
+chicago.read_csv
+new_york_city.read_csv
+washington.read_csv
 
 ### Credits
